@@ -23,6 +23,12 @@ header .logo-container {
 }
 
 
+header .logo-container img {
+    height: 80px;
+    width: auto;
+}
+
+
 header .text-container {
     display: flex;
     flex-direction: column;
@@ -53,7 +59,7 @@ header .text-container .heading h1 {
 
 header .text-container .heading-border {
     height: 12px;
-    width: 20%;
+    width: 30%;
 
     background-color: var(--dark-gray);
 }
