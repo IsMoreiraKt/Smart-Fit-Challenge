@@ -34,9 +34,28 @@ header .text-container {
 }
 
 
-header .text-container h1 {
+header .text-container .heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    margin-bottom: 24px;
+    gap: 14px
+}
+
+
+header .text-container .heading h1 {
     font-size: 34px;
     color: var(--dark-gray);
+}
+
+
+header .text-container .heading-border {
+    height: 12px;
+    width: 20%;
+
+    background-color: var(--dark-gray);
 }
 
 
