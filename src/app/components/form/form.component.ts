@@ -12,14 +12,18 @@ export class FormComponent implements OnInit {
   results = [];
   formGroup!: FormGroup;
 
-
   constructor(private formBuilder: FormBuilder) { };
-
 
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group({
       hour: '',
       showClosed: false
     });
+  };
+
+  onSubmit(): void { };
+
+  onClean(): void {
+    this.formGroup.reset();
   };
 }
