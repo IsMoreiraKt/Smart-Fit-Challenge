@@ -6,13 +6,13 @@
     <h3> {{card.title}} </h3>
     <p [innerHTML]="card.content"></p>
 
-    <div class="divider"></div>
+    <div *ngIf="card.mask || card.towel || card.fountain || card.locker_room" class="divider"></div>
 
     <ul>
-        <li><img [src]="'/assets/images/png/' + card.mask + '-mask.png'" alt="mask image"/></li>
-        <li><img [src]="'/assets/images/png/' + card.towel + '-towel.png'" alt="towel image"/></li>
-        <li><img [src]="'/assets/images/png/' + card.fountain + '-fountain.png'" alt="fountain image"/></li>
-        <li><img [src]="'/assets/images/png/' + card.locker_room + '-lockerroom.png'" alt="locker_room image"/></li>
+        <li><img *ngIf="card.mask" [src]="'/assets/images/png/' + card.mask + '-mask.png'" alt="mask image"/></li>
+        <li><img *ngIf="card.towel" [src]="'/assets/images/png/' + card.towel + '-towel.png'" alt="towel image"/></li>
+        <li><img *ngIf="card.fountain" [src]="'/assets/images/png/' + card.fountain + '-fountain.png'" alt="fountain image"/></li>
+        <li><img *ngIf="card.locker_room" [src]="'/assets/images/png/' + card.locker_room + '-lockerroom.png'" alt="locker_room image"/></li>
     </ul>
 
     <ul>
