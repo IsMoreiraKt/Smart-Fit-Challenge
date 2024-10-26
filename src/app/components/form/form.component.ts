@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+
 
 
 @Component({
@@ -8,8 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
   results = [];
+  formGroup!: FormGroup;
 
-  constructor() { };
 
-  ngOnInit(): void { };
+  constructor(private formBuilder: FormBuilder) { };
+
+
+  ngOnInit(): void {
+    this.formGroup = this.formBuilder.group({
+      hour: '',
+      showClosed: false
+    });
+  };
 }
