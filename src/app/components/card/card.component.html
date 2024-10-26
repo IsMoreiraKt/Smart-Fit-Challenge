@@ -6,6 +6,11 @@
     <h3> {{card.title}} </h3>
     <p> {{ card.content }} </p>
 
+    <img [src]="'/assets/images/png/' + card.mask + '-mask.png'" alt="mask image"/>
+    <img [src]="'/assets/images/png/' + card.towel + '-towel.png'" alt="towel image"/>
+    <img [src]="'/assets/images/png/' + card.fountain + '-fountain.png'" alt="fountain image"/>
+    <img [src]="'/assets/images/png/' + card.locker_room + '-lockerroom.png'" alt="locker_room image"/>
+
     <ul>
         <li *ngFor="let schedule of card.schedules">
             <b> {{ schedule.weekdays }} </b>
