@@ -77,7 +77,7 @@ export class FilterUnitsService {
   ) {
     let intermediateResults = results;
 
-    if (showClosed) {
+    if (!showClosed) {
       intermediateResults = results.filter(
         location => location.opened === true
       );
