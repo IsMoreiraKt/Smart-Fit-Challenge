@@ -1,17 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { FilterUnitsService } from 'src/app/services/filter-units.service';
 import { GetUnitsService } from 'src/app/services/get-units.service';
 import { Location } from 'src/app/types/location.interface';
-
-
-
-const OPENING_HOURS = {
-  morning   : { first: '06', last: '12' },
-  afternoon : { first: '12', last: '18' },
-  night     : { first: '18', last: '23' }
-};
-
-type HOUR_INDEXES = 'morning' | 'afternoon' | 'night';
 
 
 
@@ -28,7 +19,8 @@ export class FormComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private unitService: GetUnitsService
+    private unitService: GetUnitsService,
+    private filterUnitsService: FilterUnitsService
   ) { };
 
 
@@ -46,21 +38,19 @@ export class FormComponent implements OnInit {
 
 
   onSubmit(): void {
-    const OPEN_HOUR = OPENING_HOURS[
-      this.formGroup.value.hour as HOUR_INDEXES
-    ].first;
+    let {showClosed, hour} = this.formGroup.value
 
-    if (!this.formGroup.value.showClosed) {
-      this.filteredResults = this.results.filter(
-        location => location.opened === true
-      );
-    } else {
-      this.filteredResults = this.results;
-    }
+    this.filteredResults = this.filterUnitsService.filter(
+      this.results, 
+      showClosed,
+      hour
+    );
   };
 
 
   onClean(): void {
     this.formGroup.reset();
+    this.filteredResults = this.results;
+    this.formGroup.patchValue({ showClosed: true });
   };
 }
