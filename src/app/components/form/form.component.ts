@@ -31,8 +31,8 @@ export class FormComponent implements OnInit {
     });
 
     this.unitService.getAllUnits().subscribe(data => {
-        this.results = data.locations;
-        this.filteredResults = data.locations;
+      this.results = data;
+      this.filteredResults = data;
     });
   };
 
@@ -45,6 +45,8 @@ export class FormComponent implements OnInit {
       showClosed,
       hour
     );
+
+    this.unitService.setFilteredUnits(this.filteredResults);
   };
 
 
