@@ -5,6 +5,16 @@ import { Location } from 'src/app/types/location.interface';
 
 
 
+const OPENING_HOURS = {
+  morning   : { first: '06', last: '12' },
+  afternoon : { first: '12', last: '18' },
+  night     : { first: '18', last: '23' }
+};
+
+type HOUR_INDEXES = 'morning' | 'afternoon' | 'night';
+
+
+
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -36,6 +46,10 @@ export class FormComponent implements OnInit {
 
 
   onSubmit(): void {
+    const OPEN_HOUR = OPENING_HOURS[
+      this.formGroup.value.hour as HOUR_INDEXES
+    ].first;
+
     if (!this.formGroup.value.showClosed) {
       this.filteredResults = this.results.filter(
         location => location.opened === true
