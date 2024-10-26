@@ -7,12 +7,14 @@ import { HeaderComponent } from './components/header/header.component';
 import { FormComponent } from './components/form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CardsListComponent } from './components/cards-list/cards-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FormComponent
+    FormComponent,
+    CardsListComponent
   ],
   imports: [
     BrowserModule,
