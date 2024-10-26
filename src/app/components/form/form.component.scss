@@ -73,7 +73,16 @@
 
 .form-group .checkbox-wrapper {
     color: var(--light-gray);
-    margin-top: 28px;
+    
+    position: relative;
+    width: 100%;
+    margin: 28px 0;
+}
+
+
+.form-group .checkbox-wrapper span {
+    position: absolute;
+    right: 0;
 }
 
 
