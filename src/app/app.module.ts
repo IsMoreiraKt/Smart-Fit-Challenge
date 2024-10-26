@@ -8,6 +8,7 @@ import { FormComponent } from './components/form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CardsListComponent } from './components/cards-list/cards-list.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CardsListComponent } from './components/cards-list/cards-list.component
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
