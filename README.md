@@ -9,9 +9,7 @@ This repository contains my version of the smartfit challenge based on [Fernanda
 ![Docker](https://img.shields.io/badge/Docker-20.10.8-blue)
 
 
-<div align="right">
-    <img src="src/assets/images/svg/logo.svg" width="200">
-</div>
+<img src="src/assets/images/svg/logo.svg" width="500" align="right">
 
 
 ## Technologies Used
